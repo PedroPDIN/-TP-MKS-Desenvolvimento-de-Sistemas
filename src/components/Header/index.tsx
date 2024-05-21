@@ -1,13 +1,14 @@
 import Image from "next/image";
+import style from "@/styles/components/_header.module.scss"
 
 export default function Header() {
   return (
-    <header>
-      <figure id="container-logo">
-        <span id="content-logo"><span>MKS</span>Sistemas</span>
-      </figure>
+    <header className={style.header_container}>
+      <div className={style.container_logo}>
+        <span className={style.content_logo}><span>MKS</span>Sistemas</span>
+      </div>
 
-      <div id="container-icon-car-shop">
+      <div className={style.container_icon_car_shop}>
         <Image
           src="/icon-car-shop.svg"
           alt="icon car shop"
@@ -17,5 +18,5 @@ export default function Header() {
         <span>0</span>
       </div>
     </header>
-  )
-}
+  );
+};

@@ -1,0 +1,46 @@
+@import '../variables';
+
+.header_container {
+  align-items: center;
+  background-color: $color-secondary;
+  display: flex;
+  height: 101px;
+  justify-content: space-between;
+  padding: 0px 88px 0px 65px;
+  width: 100vw;
+
+  .container_logo {
+    .content_logo {
+      color: $color-primary;
+      font-size: 20px;
+      font-weight: 300;
+      line-height: 19px;
+    };
+    
+    span {
+      font-size: 40px;
+      font-weight: 600;
+      line-height: 19px;
+      margin-right: 11px;
+    };
+  };
+
+  .container_icon_car_shop {
+    align-items: center;
+    background-color: $color-primary;
+    border-radius: 8px;
+    display: flex;
+    gap: 16px;
+    height: 45px;
+    justify-content: center;
+    width: 90px;
+
+    span {
+      color: $color-black;
+      font-size: 18px;
+      font-weight: 700;
+      line-height: 21.94px;
+    };
+  };
+};
+
