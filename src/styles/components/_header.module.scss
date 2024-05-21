@@ -28,7 +28,9 @@
   .container_icon_car_shop {
     align-items: center;
     background-color: $color-primary;
+    border: none;
     border-radius: 8px;
+    cursor: pointer;
     display: flex;
     gap: 16px;
     height: 45px;
@@ -41,6 +43,18 @@
       font-weight: 700;
       line-height: 21.94px;
     };
+  };
+
+  .sidebar_car_shop {
+    background-color: $color-secondary;
+    border: solid 1px red;
+    height: 100%;
+    position: fixed;
+    top: 0px;
+    right: 0px;
+    transition: all 0.3s ease;
+    width: 486px;
+    z-index: 10;
   };
 };
 
