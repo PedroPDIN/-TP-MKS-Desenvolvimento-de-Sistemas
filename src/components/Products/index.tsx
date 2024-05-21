@@ -1,4 +1,5 @@
 import Image from "next/image";
+import BtnProduct from "../BtnProduct";
 
 import style from "@/styles/components/_products.module.scss";
 
@@ -29,15 +30,13 @@ export default function Products({ id, name, photo, price, description }: Props)
 
       <p className={style.content_product_description}>{description}</p>
 
-      <button>
-        <Image
-          src="/shopping-bag.svg"
-          alt="icon-shopping-bag"
-          width={12}
-          height={13.5}
-        />
-        COMPRAR
-      </button>
+      <BtnProduct
+        id={id}
+        name={name}
+        photo={photo}
+        price={+price}
+        amount={1}
+      />
     </article>
   );
 };

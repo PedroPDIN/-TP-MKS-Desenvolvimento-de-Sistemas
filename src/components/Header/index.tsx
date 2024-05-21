@@ -1,12 +1,16 @@
 'use client'
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import Image from "next/image";
+import { useMainContext } from "@/hooks/useMainContext";
+
 import style from "@/styles/components/_header.module.scss"
 
 export default function Header() {
+  const { dataProducts } = useMainContext();
   const [openSideBar, setOpenSideBar] = useState<boolean>(false);
-  
+  console.log(dataProducts)
+
   const OpenSideBar = (): void => {
     setOpenSideBar(!openSideBar)
   };
@@ -14,6 +18,7 @@ export default function Header() {
   const sidebarStyle = {
     display: openSideBar ? "block" : "none",
   };
+
 
   return (
     <header className={style.header_container}>
@@ -31,7 +36,7 @@ export default function Header() {
           width={19.1}
           height={18}
         />
-        <span>0</span>
+        <span>{dataProducts.length}</span>
       </button>
 
       <div className={style.sidebar_car_shop} style={sidebarStyle}>

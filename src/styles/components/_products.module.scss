@@ -69,25 +69,4 @@
   .content_title_price, .content_product_description {
     padding: 0px 11.56px 0px 14px;
   };
-
-  button {
-    align-items: center;
-    background-color: $color-secondary;
-    bottom: 0px;
-    border: none;
-    color: white;
-    cursor: pointer;
-    display: flex;
-    font-size: 14px;
-    font-weight: 600;
-    justify-content: center;
-    line-height: 18px;
-    padding: 7px 0px 9.41px 0px;
-    position: absolute;
-    width: 100%;
-
-    img {
-      margin-right: 14px;
-    };
-  };
 };
