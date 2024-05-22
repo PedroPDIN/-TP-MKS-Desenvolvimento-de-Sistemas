@@ -15,6 +15,7 @@ export default function ProductsCarShop() {
           <button
             className={style.close_product}
             onClick={() => removeProduct(product.id)}
+            type="button"
           >
             <Image
               src={"/Close_cart.svg"}
@@ -43,6 +44,7 @@ export default function ProductsCarShop() {
                 <button
                   className={style.btn_qtd_small}
                   onClick={() => updateAmountProduct(product.id, "remove")}
+                  type="button"
                 >
                   -
                 </button>
@@ -54,6 +56,7 @@ export default function ProductsCarShop() {
                 <button
                   className={style.btn_qtd_bigger}
                   onClick={() => updateAmountProduct(product.id, "add")}
+                  type="button"
                 >
                   +
                 </button>

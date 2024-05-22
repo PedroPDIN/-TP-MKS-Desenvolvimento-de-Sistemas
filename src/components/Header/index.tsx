@@ -28,6 +28,7 @@ export default function Header() {
       <button
         className={style.container_icon_car_shop}
         onClick={OpenSideBar}
+        type="button"
       >
         <Image
           src="/icon-car-shop.svg"

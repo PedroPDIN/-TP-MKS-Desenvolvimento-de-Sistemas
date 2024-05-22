@@ -1,12 +1,12 @@
 'use client'
 
 import Image from "next/image";
-import { DataProduct } from "@/store/Context/Main.context";
+import { IContextProduct } from "@/interfaces/IContextProducts.interface";
 import { useMainContext } from "@/hooks/useMainContext";
 
 import style from "@/styles/components/_btnProduct.module.scss";
 
-interface Props extends DataProduct {}
+interface Props extends IContextProduct {}
 
 export default function BtnProduct(data: Props) {
   const { addProduct } = useMainContext();
@@ -19,6 +19,7 @@ export default function BtnProduct(data: Props) {
     <button
       className={style.btn_content_product}
       onClick={clickEvent}
+      type="button"
     >
       <Image
         src="/shopping-bag.svg"
