@@ -1,22 +1,15 @@
 'use client'
 
 import { createContext, useState, ReactNode, useEffect } from "react";
+import { IContextProduct } from "@/interfaces/IContextProducts.interface";
 
 interface Props {
   children: ReactNode;
 };
 
-export interface DataProduct {
-  id: number;
-  photo: string;
-  name: string;
-  price: number;
-  amount: number;
-};
-
 export interface IDataContext {
-  addProduct: (data: DataProduct) => void,
-  dataProducts: DataProduct[],
+  addProduct: (data: IContextProduct) => void,
+  dataProducts: IContextProduct[],
   totalPrice: number;
   updateAmountProduct: (id: number, type: "add" | "remove") => void;
   removeProduct: (id: number) => void;
@@ -27,10 +20,10 @@ const MainContext = createContext({} as IDataContext);
 
 // provider
 export function MainProvider({ children }: Props) {
-  const [dataProducts, setDataProducts] = useState<DataProduct[] | []>([]);
+  const [dataProducts, setDataProducts] = useState<IContextProduct[] | []>([]);
   const [totalPrice, setTotalPrice] = useState<number>(0);
 
-  const addProduct = (data: DataProduct): void => {
+  const addProduct = (data: IContextProduct): void => {
     const existProduct = dataProducts.some((product) => product.id === data.id);
 
     if (existProduct) { 
