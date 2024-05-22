@@ -35,32 +35,35 @@ export default function ProductsCarShop() {
 
           <span className={style.name_product}>{product.name}</span>
 
-          <div className={style.qtd_container}>
-            <span>Qtd:</span>
+          <div className={style.qtd_total_price_container}>
+            <div className={style.qtd_container}>
+              <span>Qtd:</span>
 
-            <div className={style.control_qtd}>
-              <button
-                className={style.btn_qtd_small}
-                onClick={() => updateAmountProduct(product.id, "remove")}
-              >
-                -
-              </button>
-              <div className={style.divise_btn}></div>
+              <div className={style.control_qtd}>
+                <button
+                  className={style.btn_qtd_small}
+                  onClick={() => updateAmountProduct(product.id, "remove")}
+                >
+                  -
+                </button>
+                <div className={style.divise_btn}></div>
 
-              <span>{ product.amount}</span>
+                <span>{product.amount}</span>
 
-              <div className={style.divise_btn}></div>
-              <button
-                className={style.btn_qtd_bigger}
-                onClick={() => updateAmountProduct(product.id, "add")}
-              >
-                +
-              </button>
+                <div className={style.divise_btn}></div>
+                <button
+                  className={style.btn_qtd_bigger}
+                  onClick={() => updateAmountProduct(product.id, "add")}
+                >
+                  +
+                </button>
+              </div>
             </div>
+
+            <span className={style.product_price}>{`R$${product.price}`}</span>
           </div>
-          <span className={style.product_price}>{`R$${product.price}`}</span>
         </li>
       ))}
     </ul>
-  )
-}
+  );
+};

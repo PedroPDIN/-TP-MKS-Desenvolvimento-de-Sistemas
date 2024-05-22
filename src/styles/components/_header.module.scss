@@ -140,3 +140,58 @@
     };
   };
 };
+
+@media only screen and (max-width: $screen-size-mobile) {
+  .header_container {
+    padding: 0px 23px 0px 20px;
+
+    .container_logo {
+      .content_logo {
+        font-size: 16px;
+      };
+
+      span {
+        font-size: 32px;
+        margin-right: 8px;
+      };
+    };
+
+    .container_icon_car_shop {
+      height: 28px;
+      gap: 10px;
+      width: 52px;
+
+      span {
+        font-size: 14px;
+      };
+    };
+
+    // style sidebar ===================
+    .sidebar_car_shop {
+      width: 300px;
+
+      .content_title_and_toggle {
+        padding: 36px 15px 28px 32px;
+
+        span {
+          font-size: 17px;
+        };
+      };
+
+      .products_car_shop_container { 
+        overflow-x: hidden;
+      };
+
+      .baseboard_sidebar {
+        .total_price_container {
+          padding: 0px 43px 40px 28px;
+        };
+
+        button {
+          font-size: 20px;
+          height: 65.86px;
+        };
+      };
+    };
+  };
+};

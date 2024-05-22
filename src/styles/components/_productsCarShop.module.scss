@@ -26,77 +26,82 @@
       text-align: left;
       width: 113px;
       white-space: normal;
-    };  
-
-    .qtd_container {
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      height: 100%;
-      margin: 0px 40px 0px 9px;
-
-      span {
-        font-size: 5px;
-        font-weight: 400;
-        line-height: 6.1px;
-        text-align: left;
-        margin-bottom: 4px;
-      };
-
-      .control_qtd {
-        align-items: center;
-        border: solid 0.3px $color-dark-border;
-        border-radius: 4px;
-        display: flex;
-        height: 19px;
-        opacity: 0px;
-        overflow: hidden;
-        justify-content: center;
-        width: 50px;
-
-        span {
-          color: $color-black;
-          font-size: 8px;
-          font-weight: 400;
-          line-height: 9.75px;
-          padding: 0px 7px 0px 7px;
-          margin: 0;
-        };
-
-        .btn_qtd_small, .btn_qtd_bigger {
-          background-color: $color-primary;
-          color: $color-black;
-          cursor: pointer;
-          font-size: 10px;
-          font-weight: 400;
-        };
-
-        .btn_qtd_small {
-          padding: 100% 4px 100% 7px;
-        };
-
-        .btn_qtd_bigger {
-          padding: 100% 7px 100% 4px;
-        };
-
-        .divise_btn {
-          border-left: solid 0.1px $color-dark-border;
-          height: 11.5px;
-        };
-
-        button {
-          border: none;
-        };
-      };
     };
 
-    .product_price {
-      width: 62px;
-      height: 17px;
-      font-size: 14px;
-      font-weight: 700;
-      line-height: 17px;
-      text-align: left;
+    .qtd_total_price_container {
+      align-items: center;
+      display: flex;
+
+      .qtd_container {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        height: 100%;
+        margin: 0px 40px 0px 9px;
+  
+        span {
+          font-size: 5px;
+          font-weight: 400;
+          line-height: 6.1px;
+          text-align: left;
+          margin-bottom: 4px;
+        };
+  
+        .control_qtd {
+          align-items: center;
+          border: solid 0.3px $color-dark-border;
+          border-radius: 4px;
+          display: flex;
+          height: 19px;
+          opacity: 0px;
+          overflow: hidden;
+          justify-content: center;
+          width: 50px;
+  
+          span {
+            color: $color-black;
+            font-size: 8px;
+            font-weight: 400;
+            line-height: 9.75px;
+            padding: 0px 7px 0px 7px;
+            margin: 0;
+          };
+  
+          .btn_qtd_small, .btn_qtd_bigger {
+            background-color: $color-primary;
+            color: $color-black;
+            cursor: pointer;
+            font-size: 10px;
+            font-weight: 400;
+          };
+  
+          .btn_qtd_small {
+            padding: 100% 4px 100% 7px;
+          };
+  
+          .btn_qtd_bigger {
+            padding: 100% 7px 100% 4px;
+          };
+  
+          .divise_btn {
+            border-left: solid 0.1px $color-dark-border;
+            height: 11.5px;
+          };
+  
+          button {
+            border: none;
+          };
+        };
+      };
+  
+      .product_price {
+        width: 62px;
+        height: 17px;
+        font-size: 14px;
+        font-weight: 700;
+        line-height: 17px;
+        text-align: left;
+      };
     };
 
     .close_product {
@@ -107,5 +112,94 @@
       top: -8px;
       cursor: pointer;
     }
+  }
+};
+
+@media only screen and (max-width: $screen-size-mobile) {
+  .products_car_shop_container {
+    li {
+      flex-direction: column;
+      height: 220.05px;
+      justify-content: space-between;
+      padding: 28.38px 0px 21.45px 0px;
+      width: 250px;
+      
+      figure {
+        img {
+          height: 95.1px;
+          width: 80px;
+        };
+      };
+
+      .name_product {
+        font-size: 16px;
+        font-weight: 400;
+        height: 21.45px;
+        line-height: 19px;
+        text-align: center !important;
+        width: 211px !important;
+      }
+      
+      .qtd_total_price_container {
+        padding: 0px 23px 0px 16px;
+        width: 100%;
+
+        .qtd_container{
+          span:nth-child(1) {
+            display: none;
+          };
+
+          .control_qtd {
+            width: 97.37px;
+            height: 34.5px;
+            
+            span {
+              font-size: 20px;
+              padding: 0px 12px 0px 12px;
+            };
+
+            .btn_qtd_small, .btn_qtd_bigger {
+              font-size: 22px;
+            };
+
+            .btn_qtd_small {
+              padding: 100% 9.5px 100% 7px;
+            };
+  
+            .btn_qtd_bigger {
+              padding: 100% 7px 100% 9.5px;
+            };
+
+            .divise_btn {
+              height: 26.11px;
+            }; 
+          };
+        };
+
+        .product_price {
+          align-items: center;
+          background-color: $color-dark;
+          border-radius: 5px;
+          color: white;
+          display: flex;
+          font-size: 15px;
+          font-weight: 700;
+          justify-content: center;
+          height: 34.81px;
+          line-height: 15px;
+          width: 84px;
+        };
+      };
+
+      .close_product {
+        right: -12px;
+        top: -2px;
+
+        img {
+          height: 48px;
+          width: 28px;
+        };
+      };
+    };
   };
 };
