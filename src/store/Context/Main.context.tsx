@@ -2,6 +2,7 @@
 
 import { createContext, useState, ReactNode, useEffect } from "react";
 import { IContextProduct } from "@/interfaces/IContextProducts.interface";
+import Swal from 'sweetalert2';
 
 interface Props {
   children: ReactNode;
@@ -13,6 +14,7 @@ export interface IDataContext {
   totalPrice: number;
   updateAmountProduct: (id: number, type: "add" | "remove") => void;
   removeProduct: (id: number) => void;
+  clickConfirm: () => void;
 };
 
 // context
@@ -50,8 +52,26 @@ export function MainProvider({ children }: Props) {
 
   const removeProduct = (id: number): void => {
     const newListProduct = dataProducts.filter((product) => product.id !== id);
-
     setDataProducts(newListProduct)
+  };
+
+  const clickConfirm = (): void => {
+    if (dataProducts.length > 0) {
+      setDataProducts([]);
+  
+      Swal.fire({
+        title: "Obrigado!",
+        text: `Compra com o valor de R$${totalPrice}, foi realizado com sucesso.`,
+        icon: "success",
+        confirmButtonColor: "#0F52BA",
+      });
+    } else {
+      Swal.fire({
+        title: "Oops!",
+        text: `Parece que o carrinho está vazio.`,
+        icon: "question"
+      });
+    };
   };
 
   useEffect(() => {
@@ -68,6 +88,7 @@ export function MainProvider({ children }: Props) {
     totalPrice,
     updateAmountProduct,
     removeProduct,
+    clickConfirm,
   };
 
   return (

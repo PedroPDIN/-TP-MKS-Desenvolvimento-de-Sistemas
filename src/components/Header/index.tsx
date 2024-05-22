@@ -8,7 +8,7 @@ import { useMainContext } from "@/hooks/useMainContext";
 import style from "@/styles/components/_header.module.scss"
 
 export default function Header() {
-  const { dataProducts, totalPrice } = useMainContext();
+  const { dataProducts, totalPrice, clickConfirm } = useMainContext();
   const [openSideBar, setOpenSideBar] = useState<boolean>(false);
 
   const OpenSideBar = (): void => {
@@ -64,7 +64,12 @@ export default function Header() {
             <span>{`R$${totalPrice}`}</span>
           </div>
 
-          <button>Finalizar Compra</button>
+          <button
+            type="button"
+            onClick={clickConfirm}
+          >
+            Finalizar Compra
+          </button>
         </div>
       </div>
     </header>
