@@ -1,7 +1,8 @@
 'use client'
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Image from "next/image";
+import ProductsCarShop from "../ProductsCarShop";
 import { useMainContext } from "@/hooks/useMainContext";
 
 import style from "@/styles/components/_header.module.scss"
@@ -18,7 +19,6 @@ export default function Header() {
   const sidebarStyle = {
     display: openSideBar ? "block" : "none",
   };
-
 
   return (
     <header className={style.header_container}>
@@ -40,9 +40,10 @@ export default function Header() {
       </button>
 
       <div className={style.sidebar_car_shop} style={sidebarStyle}>
-        <div>
+        <div className={style.content_title_and_toggle}>
           <span>Carrinho de compras</span>
           <button
+            type="button"
             onClick={OpenSideBar}
           >
             <Image
@@ -52,6 +53,19 @@ export default function Header() {
               height={38}
             />
           </button>
+        </div>
+
+        <section className={style.products_car_shop_container}>
+          <ProductsCarShop />
+        </section>
+
+        <div className={style.baseboard_sidebar}>
+          <div className={style.total_price_container}>
+            <span>Total:</span>
+            <span>{`R$100`}</span>
+          </div>
+
+          <button>Finalizar Compra</button>
         </div>
       </div>
     </header>

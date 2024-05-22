@@ -1,0 +1,111 @@
+@import "../variables";
+
+.products_car_shop_container {
+  flex-direction: column;
+  
+  li {
+    align-items: center;
+    background-color: $color-primary;
+    border-radius: 8px;
+    display: flex;
+    height: 101px;
+    margin-bottom: 22px;
+    position: relative;
+    width: 385px;
+
+    img {
+      margin: 0px 21px 0px 23px;
+    }
+
+    .name_product {
+      color: $color-dark-description;
+      font-size: 13px;
+      font-weight: 400;
+      height: 33px;
+      line-height: 17px;
+      text-align: left;
+      width: 113px;
+      white-space: normal;
+    };  
+
+    .qtd_container {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      height: 100%;
+      margin: 0px 40px 0px 9px;
+
+      span {
+        font-size: 5px;
+        font-weight: 400;
+        line-height: 6.1px;
+        text-align: left;
+        margin-bottom: 4px;
+      };
+
+      .control_qtd {
+        align-items: center;
+        border: solid 0.3px $color-dark-border;
+        border-radius: 4px;
+        display: flex;
+        height: 19px;
+        opacity: 0px;
+        overflow: hidden;
+        justify-content: center;
+        width: 50px;
+
+        span {
+          color: $color-black;
+          font-size: 8px;
+          font-weight: 400;
+          line-height: 9.75px;
+          padding: 0px 7px 0px 7px;
+          margin: 0;
+        };
+
+        .btn_qtd_small, .btn_qtd_bigger {
+          background-color: $color-primary;
+          color: $color-black;
+          cursor: pointer;
+          font-size: 10px;
+          font-weight: 400;
+        };
+
+        .btn_qtd_small {
+          padding: 100% 4px 100% 7px;
+        };
+
+        .btn_qtd_bigger {
+          padding: 100% 7px 100% 4px;
+        };
+
+        .divise_btn {
+          border-left: solid 0.1px $color-dark-border;
+          height: 11.5px;
+        };
+
+        button {
+          border: none;
+        };
+      };
+    };
+
+    .product_price {
+      width: 62px;
+      height: 17px;
+      font-size: 14px;
+      font-weight: 700;
+      line-height: 17px;
+      text-align: left;
+    };
+
+    .close_product {
+      border: none;
+      background-color: transparent;
+      position: absolute;
+      right: -28px;
+      top: -8px;
+      cursor: pointer;
+    }
+  };
+};
