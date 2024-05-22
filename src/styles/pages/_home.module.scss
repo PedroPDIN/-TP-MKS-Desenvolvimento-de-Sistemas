@@ -2,12 +2,12 @@
 
 .home_container {
   width: 100%;
-  
+
   .section_products_container {
     align-items: center;
     display: flex;
     justify-content: center;
-    margin: 116px 0px 172px 0px;
+    margin-top: 116px;
     width: 100%;
     
     .list_products_content{
@@ -17,6 +17,7 @@
       height: 601px;
       justify-content: space-between;
       list-style: none;
+      padding-bottom: 172px;
       width: 938px;
     };
   };
@@ -28,7 +29,9 @@
       margin-top: 18px;
 
       .list_products_content {
+        height: auto;
         justify-content: space-around;
+        padding-bottom: 7.86px !important;
       };
     };
   };
@@ -38,9 +41,12 @@
   .home_container {
     .section_products_container {
       margin-top: 18px;
+      margin-bottom: auto;
 
       .list_products_content {
+        height: auto;
         justify-content: space-around;
+        padding-bottom: 120px !important;
       };
     };
   } ;
