@@ -61,7 +61,7 @@ export function MainProvider({ children }: Props) {
   
       Swal.fire({
         title: "Obrigado!",
-        text: `Compra com o valor de R$${totalPrice}, foi realizado com sucesso.`,
+        text: `Compra com o valor de R$ ${totalPrice}, foi realizado com sucesso.`,
         icon: "success",
         confirmButtonColor: "#0F52BA",
       });
