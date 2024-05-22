@@ -7,8 +7,7 @@ interface IValueProducts {
   price: string;
   createdAt: string;
   updatedAt: string;
-}
-
+};
 
 export interface IProducts {
   products: IValueProducts[];

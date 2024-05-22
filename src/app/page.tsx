@@ -1,5 +1,4 @@
 import Products from "@/components/Products";
-// import { products } from "../../mockProducts";
 
 import style from "@/styles/pages/_home.module.scss";
 import { IProducts } from "@/interfaces/IDataProducts.interface";
