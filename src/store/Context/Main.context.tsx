@@ -16,7 +16,10 @@ export interface DataProduct {
 
 export interface IDataContext {
   addProduct: (data: DataProduct) => void,
-  dataProducts: DataProduct[]
+  dataProducts: DataProduct[],
+  totalPrice: number;
+  updateAmountProduct: (id: number, type: "add" | "remove") => void;
+  removeProduct: (id: number) => void;
 };
 
 // context
@@ -25,15 +28,51 @@ const MainContext = createContext({} as IDataContext);
 // provider
 export function MainProvider({ children }: Props) {
   const [dataProducts, setDataProducts] = useState<DataProduct[] | []>([]);
+  const [totalPrice, setTotalPrice] = useState<number>(0);
 
   const addProduct = (data: DataProduct): void => {
-    setDataProducts([...dataProducts, data])
-  }
+    const existProduct = dataProducts.some((product) => product.id === data.id);
 
+    if (existProduct) { 
+      updateAmountProduct(data.id, "add");
+    } else {
+      setDataProducts([...dataProducts, data])
+    };
+  };
+
+  const updateAmountProduct = (id: number, type: "add" | "remove"): void => {
+    const newListProduct = dataProducts.map((product) => {
+      if (product.id === id) {
+        const updatedAmount = type === "add" ? product.amount + 1 : product.amount - 1;
+        const updatedProduct = { ...product, amount: updatedAmount };
+        return updatedProduct;
+      };
+      return product;
+    });
+
+    setDataProducts(newListProduct);
+  };
+
+  const removeProduct = (id: number): void => {
+    const newListProduct = dataProducts.filter((product) => product.id !== id);
+
+    setDataProducts(newListProduct)
+  };
+
+  useEffect(() => {
+    const updatedTotalPrice = dataProducts.reduce((total, product) => {
+      return total + (product.price * product.amount);
+    }, 0);
+
+    setTotalPrice(updatedTotalPrice);
+  }, [dataProducts]);
 
   const contextValue = {
     addProduct,
     dataProducts,
+    totalPrice,
+    updateAmountProduct,
+    removeProduct,
   };
 
   return (

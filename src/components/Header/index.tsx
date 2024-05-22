@@ -8,9 +8,8 @@ import { useMainContext } from "@/hooks/useMainContext";
 import style from "@/styles/components/_header.module.scss"
 
 export default function Header() {
-  const { dataProducts } = useMainContext();
+  const { dataProducts, totalPrice } = useMainContext();
   const [openSideBar, setOpenSideBar] = useState<boolean>(false);
-  console.log(dataProducts)
 
   const OpenSideBar = (): void => {
     setOpenSideBar(!openSideBar)
@@ -62,7 +61,7 @@ export default function Header() {
         <div className={style.baseboard_sidebar}>
           <div className={style.total_price_container}>
             <span>Total:</span>
-            <span>{`R$100`}</span>
+            <span>{`R$${totalPrice}`}</span>
           </div>
 
           <button>Finalizar Compra</button>

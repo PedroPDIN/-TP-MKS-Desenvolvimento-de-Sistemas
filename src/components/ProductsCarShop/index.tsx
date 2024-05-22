@@ -6,13 +6,16 @@ import { useMainContext } from "@/hooks/useMainContext";
 import style from "@/styles/components/_productsCarShop.module.scss";
 
 export default function ProductsCarShop() {
-  const { dataProducts } = useMainContext()
+  const { dataProducts, updateAmountProduct, removeProduct } = useMainContext()
 
   return (
     <ul className={style.products_car_shop_container}>
       {dataProducts.map((product) => (
         <li key={product.id}>
-          <button className={style.close_product}>
+          <button
+            className={style.close_product}
+            onClick={() => removeProduct(product.id)}
+          >
             <Image
               src={"/Close_cart.svg"}
               alt="btn close cart"
@@ -36,13 +39,23 @@ export default function ProductsCarShop() {
             <span>Qtd:</span>
 
             <div className={style.control_qtd}>
-              <button className={style.btn_qtd_small}>-</button>
+              <button
+                className={style.btn_qtd_small}
+                onClick={() => updateAmountProduct(product.id, "remove")}
+              >
+                -
+              </button>
               <div className={style.divise_btn}></div>
 
-              <span>1</span>
+              <span>{ product.amount}</span>
 
               <div className={style.divise_btn}></div>
-              <button className={style.btn_qtd_bigger}>+</button>
+              <button
+                className={style.btn_qtd_bigger}
+                onClick={() => updateAmountProduct(product.id, "add")}
+              >
+                +
+              </button>
             </div>
           </div>
           <span className={style.product_price}>{`R$${product.price}`}</span>
