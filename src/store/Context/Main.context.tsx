@@ -36,7 +36,9 @@ export function MainProvider({ children }: Props) {
   const updateAmountProduct = (id: number, type: "add" | "remove"): void => {
     const newListProduct = dataProducts.map((product) => {
       if (product.id === id) {
-        const updatedAmount = type === "add" ? product.amount + 1 : product.amount - 1;
+        
+        let updatedAmount = type === "add" ? product.amount + 1 : product.amount - 1;
+        if (updatedAmount < 0) updatedAmount = 0;
         const updatedProduct = { ...product, amount: updatedAmount };
         return updatedProduct;
       };
