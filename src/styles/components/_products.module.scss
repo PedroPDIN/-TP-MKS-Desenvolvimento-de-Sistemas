@@ -70,3 +70,15 @@
     padding: 0px 11.56px 0px 14px;
   };
 };
+
+@media only screen and (max-width: $screen-size-mobile) {
+  .article_product_container {
+    margin-bottom: 18px;
+  };
+};
+
+@media only screen and (min-width: $screen-size-mobile) and (max-width: $screen-size-laptop) {
+  .article_product_container {
+    margin-bottom: 18px;
+  };
+};

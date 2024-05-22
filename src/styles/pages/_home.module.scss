@@ -21,3 +21,27 @@
     };
   };
 };
+
+@media only screen and (max-width: $screen-size-mobile) {
+  .home_container {
+    .section_products_container {
+      margin-top: 18px;
+
+      .list_products_content {
+        justify-content: space-around;
+      };
+    };
+  };
+};
+
+@media only screen and (min-width: $screen-size-mobile) and (max-width: $screen-size-laptop) { 
+  .home_container {
+    .section_products_container {
+      margin-top: 18px;
+
+      .list_products_content {
+        justify-content: space-around;
+      };
+    };
+  } ;
+};
