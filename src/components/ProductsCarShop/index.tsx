@@ -45,7 +45,7 @@ export default function ProductsCarShop() {
               <button className={style.btn_qtd_bigger}>+</button>
             </div>
           </div>
-          <span className={style.product_price}>{ `R$${product.price}`}</span>
+          <span className={style.product_price}>{`R$${product.price}`}</span>
         </li>
       ))}
     </ul>
