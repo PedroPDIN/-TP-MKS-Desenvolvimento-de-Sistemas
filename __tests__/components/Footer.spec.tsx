@@ -10,5 +10,5 @@ describe('Component Footer', () => {
     expect(elementFooter).toBeDefined();
     expect(elementFooter.tagName).toEqual("FOOTER");
     expect(elementFooter.innerHTML).toEqual("MKS sistemas © Todos os direitos reservados");
-  })
-})
+  });
+});
